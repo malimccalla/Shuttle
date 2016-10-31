@@ -29,8 +29,8 @@ const styles = {
     color: '#007aff',
     fontSize: 16,
     fontWeight: '600',
-    paddingTop: 10,
-    paddingBottom: 10
+    paddingTop: 5,
+    paddingBottom: 5
   }
 };
 
