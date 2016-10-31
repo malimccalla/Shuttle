@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import { Text } from 'react-native';
-import reducers from './src/reducers';
+import reducers from './reducers';
 
 class App extends Component {
   render() {

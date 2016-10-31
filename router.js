@@ -1,16 +1,17 @@
 import React from 'react';
-import { Scene, Router, Actions } from 'react-native-router-flux';
+import { Scene, Router } from 'react-native-router-flux';
 
-const RouterComponent = () => {
-  <Router>
-    <Scene key="auth">
-      <Scene key="signup">
-        <Scene key="signupEmail"></Scene>
-      </Scene>  
+export const RouterComponent = () => {
+  return (
+    <Router>
+      <Scene key="auth">
+        <Scene key="signup">
+          <Scene key="signupEmail" />
+        </Scene>
 
-      <Scene key="loging">
+        <Scene key="loging" />
 
       </Scene>
-    </Scene>
-  </Router>
-}
+    </Router>
+  );
+};
