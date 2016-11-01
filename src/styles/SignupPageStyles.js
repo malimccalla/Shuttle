@@ -21,10 +21,10 @@ export const styles = {
   buttonStyle: {
     fontSize: 20,
     borderWidth: 1,
-    paddingTop: 8,
+    paddingTop: 10,
     fontWeight: '400',
-    paddingBottom: 8,
-    marginLeft: 10,
+    paddingBottom: 9,
+    marginLeft: 9,
     marginRight: 10,
     backgroundColor: '#fff',
     borderColor: '#FFF',
@@ -32,5 +32,5 @@ export const styles = {
     borderRadius: 2,
     marginTop: 5,
     overflow: 'hidden'
-  }
+  },
 };

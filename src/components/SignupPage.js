@@ -6,18 +6,37 @@ import { HoshiInput } from './common';
 import { emailChanged, passwordChanged, createUser } from '../actions';
 import { styles } from '../styles/SignupPageStyles';
 
+const MINIMUM_PASSWORD_LENGTH = 6;
+
 class SignupPage extends Component {
+
+  state = {
+    buttonDisabled: true
+  }
+
   handleEmailChange(text) {
     this.props.emailChanged(text);
+    this.checkButton();
   }
 
   handlePasswordChange(text) {
     this.props.passwordChanged(text);
+    this.checkButton();
   }
 
   handleCreateAccountTap() {
     const { email, password } = this.props;
     this.props.createUser({ email, password });
+  }
+
+  checkButton() {
+    const { email, password } = this.props;
+    console.log(password.length);
+    if (email && password.length >= MINIMUM_PASSWORD_LENGTH) {
+      this.setState({ buttonDisabled: false });
+    } else {
+      this.setState({ buttonDisabled: true });
+    }
   }
 
   render() {
@@ -45,8 +64,9 @@ class SignupPage extends Component {
         />
         <Button
           style={buttonStyle}
-          styleDisabled={{ color: 'red' }}
+          styleDisabled={{ ...buttonStyle, opacity: 0.6 }}
           onPress={this.handleCreateAccountTap.bind(this)}
+          disabled={this.state.buttonDisabled}
         >
           Create account
         </Button>
