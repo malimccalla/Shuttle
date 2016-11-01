@@ -11,10 +11,8 @@ const INITITAL_STATE = {
 export default (state = INITITAL_STATE, action) => {
   switch (action.type) {
     case EMAIL_CHANGED:
-    console.log('Email changed!');
       return { ...state, email: action.payload };
     case PASSWORD_CHANGED:
-      console.log('Password changed!');
       return { ...state, password: action.payload };
     default:
       return state;

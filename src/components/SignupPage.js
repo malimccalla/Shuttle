@@ -14,10 +14,15 @@ class SignupPage extends Component {
     this.props.passwordChanged(text);
   }
 
+  handleCreateAccountTap() {
+    const { email, password } = this.props;
+    console.log('Button tapped');
+    this.props.createUser({ email, password });
+  }
+
   render() {
     const { containerStyle, textStyle, ImageStyle, buttonStyle } = styles;
-    console.log(this.props.password);
-    console.log(this.props.email);
+
     return (
       <View style={containerStyle}>
         <StatusBar hidden />
@@ -41,9 +46,9 @@ class SignupPage extends Component {
         <Button
           style={buttonStyle}
           styleDisabled={{ color: 'red' }}
-          onPress={() => this.handlePress()}
+          onPress={this.handleCreateAccountTap.bind(this)}
         >
-          Next
+          Create account
         </Button>
       </View>
     );
