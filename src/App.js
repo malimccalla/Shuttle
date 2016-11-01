@@ -7,6 +7,8 @@ import { API_KEY } from './secrets';
 import reducers from './reducers';
 import SignupPage from './components/SignupPage';
 
+import Router from './router';
+
 class App extends Component {
   componentWillMount() {
     const config = {
@@ -24,7 +26,7 @@ class App extends Component {
 
     return (
       <Provider store={store}>
-        <SignupPage />
+        <Router />
       </Provider>
     );
   }
