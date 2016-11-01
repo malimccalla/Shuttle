@@ -4,6 +4,7 @@ import Button from 'react-native-button';
 import { connect } from 'react-redux';
 import { HoshiInput } from './common';
 import { emailChanged, passwordChanged, createUser } from '../actions';
+import { styles } from '../styles/SignupPageStyles';
 
 class SignupPage extends Component {
   handleEmailChange(text) {
@@ -20,13 +21,13 @@ class SignupPage extends Component {
   }
 
   render() {
-    const { containerStyle, textStyle, ImageStyle, buttonStyle } = styles;
+    const { imageStyle, containerStyle, textStyle, buttonStyle } = styles;
 
     return (
       <View style={containerStyle}>
         <StatusBar hidden />
         <Image
-          style={ImageStyle}
+          style={imageStyle}
           source={require('../images/ShuttleWithLogo.png')}
           resizeMode={'contain'}
         />
@@ -53,44 +54,6 @@ class SignupPage extends Component {
     );
   }
 }
-
-const styles = {
-  containerStyle: {
-    flex: 1,
-    backgroundColor: '#12b4f9'
-  },
-  textStyle: {
-    fontSize: 18,
-    fontWeight: '300',
-    color: '#fff',
-    marginLeft: 15,
-    paddingBottom: 15,
-    textAlign: 'center'
-  },
-  ImageStyle: {
-    height: 130,
-    width: 250,
-    justifyContent: 'center',
-    alignSelf: 'center',
-    marginTop: 40,
-    marginBottom: 35
-  },
-  buttonStyle: {
-    fontSize: 20,
-    borderWidth: 1,
-    paddingTop: 7,
-    fontWeight: '500',
-    paddingBottom: 7,
-    marginLeft: 10,
-    marginRight: 10,
-    backgroundColor: '#fff',
-    borderColor: '#FFF',
-    color: '#12b4f9',
-    borderRadius: 2,
-    marginTop: 5,
-    overflow: 'hidden'
-  }
-};
 
 const mapStateToProps = (state) => {
   const { email, password } = state.auth;
