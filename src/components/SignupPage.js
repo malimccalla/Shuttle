@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import { View, Text, StatusBar, Image } from 'react-native';
-import { HoshiInput, Sae } from './common';
 import Button from 'react-native-button';
+import { connect } from 'react-redux';
+import { HoshiInput } from './common';
+import { emailChanged, passwordChanged } from '../actions';
 
 class SignupPage extends Component {
-  render() {
-  const { containerStyle, textStyle, ImageStyle, buttonStyle } = styles;
+  handleEmailChange(text) {
+    this.props.emailChanged(text);
+  }
 
+  handlePasswordChange(text) {
+    this.props.passwordChanged(text);
+  }
+
+  render() {
+    const { containerStyle, textStyle, ImageStyle, buttonStyle } = styles;
+    console.log(this.props.password);
+    console.log(this.props.email);
     return (
       <View style={containerStyle}>
         <StatusBar hidden />
@@ -19,14 +30,19 @@ class SignupPage extends Component {
         <HoshiInput
           label={'Email Address'}
           keyboardType={'email-address'}
+          onChangeText={this.handleEmailChange.bind(this)}
+          value={this.props.email}
         />
         <HoshiInput
           label={'Password'} secureTextEntry
+          onChangeText={this.handlePasswordChange.bind(this)}
+          value={this.props.password}
         />
         <Button
           style={buttonStyle}
           styleDisabled={{ color: 'red' }}
-          onPress={() => this._handlePress()}>
+          onPress={() => this.handlePress()}
+        >
           Next
         </Button>
       </View>
@@ -53,7 +69,7 @@ const styles = {
     justifyContent: 'center',
     alignSelf: 'center',
     marginTop: 40,
-    marginBottom: 30
+    marginBottom: 35
   },
   buttonStyle: {
     fontSize: 20,
@@ -72,4 +88,9 @@ const styles = {
   }
 };
 
-export default SignupPage;
+const mapStateToProps = (state) => {
+  const { email, password } = state.auth;
+  return { email, password };
+};
+
+export default connect(mapStateToProps, { emailChanged, passwordChanged })(SignupPage);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Hoshi } from 'react-native-textinput-effects';
 
-const HoshiInput = ({ label, secureTextEntry, keyboardType }) => {
+const HoshiInput = ({ label, secureTextEntry, keyboardType, onChangeText }) => {
   return (
     <Hoshi
       style={{ marginBottom: 10 }}
@@ -16,6 +16,8 @@ const HoshiInput = ({ label, secureTextEntry, keyboardType }) => {
       autoCorrect={false}
       keyboardType={keyboardType}
       textInputStyle={{ fontWeight: '300' }}
+      selectionColor={'#fff'}
+      onChangeText={onChangeText}
     />
   );
 };
