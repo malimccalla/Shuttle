@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Image, View, StatusBar } from 'react-native';
-import Drawer from 'react-native-drawer';
+import { Image, View, StatusBar, ScrollView } from 'react-native';
 
 class ShowsList extends Component {
   render() {
     return (
-      <View style={styles.containerStyle}>
+      <ScrollView contentContainerStyle={styles.containerStyle}>
         <StatusBar barStyle='light-content' />
         <View style={styles.noShowsStyle}>
           <Image
@@ -14,7 +13,7 @@ class ShowsList extends Component {
             resizeMode={'contain'}
           />
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -33,11 +32,6 @@ const styles = {
     height: 170,
     alignSelf: 'center'
   }
-};
-
-const drawerStyles = {
-  drawer: { shadowColor: '#fff', shadowOpacity: 0.8, shadowRadius: 3 },
-  main: { paddingLeft: 3 }
 };
 
 export default ShowsList;
