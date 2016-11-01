@@ -5,7 +5,6 @@ import ReduxThunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import { API_KEY } from './secrets';
 import reducers from './reducers';
-import SignupPage from './components/SignupPage';
 
 import Router from './router';
 

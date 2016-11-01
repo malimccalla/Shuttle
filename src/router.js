@@ -10,7 +10,7 @@ const RouterComponent = () => {
         <Scene key="singupPage" component={SignupPage} hideNavBar />
       </Scene>
 
-      <Scene key="main">
+      <Scene key="main" initial>
         <Scene key="showsList" component={ShowsList} title="Shows" />
       </Scene>
     </Router>
