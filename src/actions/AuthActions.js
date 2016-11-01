@@ -1,6 +1,10 @@
+import firebase from 'firebase';
 import {
   EMAIL_CHANGED,
-  PASSWORD_CHANGED
+  PASSWORD_CHANGED,
+  CREATE_USER_ATTEMPT,
+  CREATE_USER_SUCCESS,
+  CREATE_USER_FAIL
 } from './types';
 
 export const emailChanged = (text) => {
@@ -15,4 +19,32 @@ export const passwordChanged = (text) => {
     type: PASSWORD_CHANGED,
     payload: text
   };
+};
+
+export const createUser = ({ email, password }) => {
+  return (dispatch) => {
+    dispatch({ type: CREATE_USER_ATTEMPT });
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(user => createUserSuccess(dispatch, user))
+      .catch((error) => createUserFail(dispatch, error));
+  };
+};
+
+// ------------- HELPERS ---------------
+
+const createUserSuccess = (dispatch, user) => {
+  console.log(user);
+  console.log('in user success');
+  firebase.database().ref(`users/${user.uid}`)
+  .set({ email: user.email })
+  .then(() => {
+    dispatch({ type: CREATE_USER_SUCCESS, payload: user });
+    // Actions.main();
+  });
+};
+
+const createUserFail = (dispatch, error) => {
+  console.log(error);
+  console.log('in user fail');
+  dispatch({ type: CREATE_USER_FAIL });
 };

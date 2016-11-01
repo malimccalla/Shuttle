@@ -3,7 +3,7 @@ import { View, Text, StatusBar, Image } from 'react-native';
 import Button from 'react-native-button';
 import { connect } from 'react-redux';
 import { HoshiInput } from './common';
-import { emailChanged, passwordChanged } from '../actions';
+import { emailChanged, passwordChanged, createUser } from '../actions';
 
 class SignupPage extends Component {
   handleEmailChange(text) {
@@ -16,7 +16,6 @@ class SignupPage extends Component {
 
   handleCreateAccountTap() {
     const { email, password } = this.props;
-    console.log('Button tapped');
     this.props.createUser({ email, password });
   }
 
@@ -98,4 +97,6 @@ const mapStateToProps = (state) => {
   return { email, password };
 };
 
-export default connect(mapStateToProps, { emailChanged, passwordChanged })(SignupPage);
+export default connect(mapStateToProps, {
+  emailChanged, passwordChanged, createUser
+})(SignupPage);
