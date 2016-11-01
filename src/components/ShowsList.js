@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Image, View, StatusBar } from 'react-native';
+import Drawer from 'react-native-drawer';
 
 class ShowsList extends Component {
   render() {
@@ -32,6 +33,11 @@ const styles = {
     height: 170,
     alignSelf: 'center'
   }
+};
+
+const drawerStyles = {
+  drawer: { shadowColor: '#fff', shadowOpacity: 0.8, shadowRadius: 3 },
+  main: { paddingLeft: 3 }
 };
 
 export default ShowsList;
