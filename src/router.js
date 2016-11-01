@@ -30,14 +30,15 @@ class RouterComponent extends Component {
           main: { opacity: (2 - ratio) / 2 }
         })}
       >
-        <Router sceneStyle={{ paddingTop: 65 }}>
+        {/* TODO  fix padding top sceneStyle diff on auth and main*/}
+        <Router>
           <Scene key="auth">
-            <Scene key="singupPage" component={SignupPage} hideNavBar />
+            <Scene key="singupPage" component={SignupPage} hideNavBar initial />
           </Scene>
 
           <Scene
+            sceneStyle={{ paddingTop: 65 }}
             key="main"
-            initial
             navigationBarStyle={{ backgroundColor: '#12b4f9', borderBottomWidth: 0 }}
             titleStyle={{ color: '#fff', fontWeight: '500' }}
           >
