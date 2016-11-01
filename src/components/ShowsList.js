@@ -1,25 +1,36 @@
 import React, { Component } from 'react';
-import { Text, View, StatusBar } from 'react-native';
+import { Image, View, StatusBar } from 'react-native';
 
 class ShowsList extends Component {
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: '#e9e9e9', justifyContent: 'center' }}>
-        <StatusBar />
-        <Text stlye={styles.textStyle}>
-          Oh dear, looks like you dont have any shows. Add a new one
-        </Text>
+      <View style={styles.containerStyle}>
+        <StatusBar barStyle='light-content' />
+        <View style={styles.noShowsStyle}>
+          <Image
+            style={styles.imageStyle}
+            source={require('../images/noShowsPlaceholder.png')}
+            resizeMode={'contain'}
+          />
+        </View>
       </View>
     );
   }
 }
 
 const styles = {
-  textStyle: {
-    justifyContent: 'center',
+  containerStyle: {
+    flex: 1,
+    backgroundColor: '#fefefe',
+    justifyContent: 'center'
+  },
+  noShowsStyle: {
     alignSelf: 'center',
-    fontSize: 18,
-    color: '#000'
+    paddingBottom: 65
+  },
+  imageStyle: {
+    height: 170,
+    alignSelf: 'center'
   }
 };
 
