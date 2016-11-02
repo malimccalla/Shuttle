@@ -5,6 +5,7 @@ import { Scene, Router, Actions } from 'react-native-router-flux';
 import SignupPage from './components/SignupPage';
 import ShowsList from './components/ShowsList';
 import AddShow from './components/AddShow';
+import { styles } from './styles/NavigationStyles';
 
 class RouterComponent extends Component {
   state = {
@@ -25,33 +26,33 @@ class RouterComponent extends Component {
         openDrawerOffset={0.2} // 20% gap on the right side of drawer
         panCloseMask={0.2}
         closedDrawerOffset={-3}
-        styles={drawerStyles}
+        styles={styles.drawerStyles}
         tweenHandler={(ratio) => ({
           main: { opacity: (2 - ratio) / 2 }
         })}
       >
-        {/* TODO  fix padding top sceneStyle diff on auth and main*/}
         <Router>
           <Scene key="auth">
-            <Scene key="singupPage" component={SignupPage} hideNavBar initial />
+            <Scene key="singupPage" component={SignupPage} hideNavBar />
           </Scene>
 
           <Scene
-            sceneStyle={{ paddingTop: 65 }}
+            // initial
             key="main"
-            navigationBarStyle={{ backgroundColor: '#12b4f9', borderBottomWidth: 0 }}
-            titleStyle={{ color: '#fff', fontWeight: '500' }}
+            navigationBarStyle={styles.navBarStyle}
+            titleStyle={styles.navBarTitleStyle}
           >
             <Scene
+              sceneStyle={{ paddingTop: 65 }}
               key="showsList"
               component={ShowsList}
               title="Shows"
               rightButtonImage={require('./images/addShowButton.png')}
               onRight={() => Actions.addShow()}
-              rightButtonIconStyle={{ height: 25, width: 25 }}
+              rightButtonIconStyle={styles.addShowButtonStyle}
               leftButtonImage={require('./images/menuButton.png')}
               onLeft={this.openDrawer.bind(this)}
-              leftButtonIconStyle={{ height: 20, width: 25, marginTop: 4 }}
+              leftButtonIconStyle={styles.menuButtonStyle}
             />
             <Scene
               key="addShow"
@@ -65,10 +66,5 @@ class RouterComponent extends Component {
     );
   }
 }
-
-const drawerStyles = {
-  drawer: { shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 2 },
-  main: { paddingLeft: 3 }
-};
 
 export default RouterComponent;
