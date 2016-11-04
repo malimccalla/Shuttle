@@ -21,12 +21,10 @@ export default (state = INITITAL_STATE, action) => {
     case PASSWORD_CHANGED:
       return { ...state, password: action.payload };
     case CREATE_USER_ATTEMPT:
-      console.log('create attempt');
       return { ...state, loading: true };
     case CREATE_USER_FAIL:
       return { ...state, loading: false, error: 'That email is already in use' };
     case CREATE_USER_SUCCESS:
-      console.log('create sucessfull');
       return { ...state, ...INITITAL_STATE, user: action.payload };
     default:
       return state;

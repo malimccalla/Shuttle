@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StatusBar, Image } from 'react-native';
 import Button from 'react-native-button';
 import { connect } from 'react-redux';
-import { HoshiInput } from './common';
+import { HoshiInput, Spinner } from './common';
 import { emailChanged, passwordChanged, createUser } from '../actions';
 import { styles } from '../styles/SignupPageStyles';
 
@@ -30,17 +30,32 @@ class SignupPage extends Component {
   }
 
   checkButton() {
-    const { email, password } = this.props;
-    console.log(password.length);
-    if (email && password.length >= MINIMUM_PASSWORD_LENGTH) {
+    if (this.props.isSecurePassword) {
       this.setState({ buttonDisabled: false });
     } else {
       this.setState({ buttonDisabled: true });
     }
   }
 
+  renderButton() {
+    if (this.props.loading) {
+      console.log('show spinner');
+      return <Spinner size="small" />;
+    }
+    return (
+      <Button
+        style={styles.buttonStyle}
+        onPress={this.handleCreateAccountTap.bind(this)}
+        disabled={this.state.buttonDisabled}
+        styleDisabled={{ ...styles.buttonStyle, opacity: 0.6 }}
+      >
+        Create account
+      </Button>
+    );
+  }
+
   render() {
-    const { imageStyle, containerStyle, textStyle, buttonStyle } = styles;
+    const { imageStyle, containerStyle, textStyle } = styles;
 
     return (
       <View style={containerStyle}>
@@ -62,22 +77,17 @@ class SignupPage extends Component {
           onChangeText={this.handlePasswordChange.bind(this)}
           value={this.props.password}
         />
-        <Button
-          style={buttonStyle}
-          styleDisabled={{ ...buttonStyle, opacity: 0.6 }}
-          onPress={this.handleCreateAccountTap.bind(this)}
-          disabled={this.state.buttonDisabled}
-        >
-          Create account
-        </Button>
+        {this.renderButton()}
       </View>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  const { email, password } = state.auth;
-  return { email, password };
+  const { email, password, loading } = state.auth;
+  const isSecurePassword = (email && password.length >= MINIMUM_PASSWORD_LENGTH);
+
+  return { email, password, loading, isSecurePassword };
 };
 
 export default connect(mapStateToProps, {

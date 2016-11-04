@@ -38,6 +38,7 @@ class RouterComponent extends Component {
 
           <Scene
             // initial
+            // sceneStyle={{ paddingTop: 65 }}
             key="main"
             navigationBarStyle={styles.navBarStyle}
             titleStyle={styles.navBarTitleStyle}
@@ -55,6 +56,7 @@ class RouterComponent extends Component {
               leftButtonIconStyle={styles.menuButtonStyle}
             />
             <Scene
+              sceneStyle={{ paddingTop: 65 }}
               key="addShow"
               component={AddShow}
               title="Add Show"
