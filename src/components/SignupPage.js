@@ -39,7 +39,6 @@ class SignupPage extends Component {
 
   renderButton() {
     if (this.props.loading) {
-      console.log('show spinner');
       return <Spinner size="small" />;
     }
     return (
@@ -85,7 +84,7 @@ class SignupPage extends Component {
 
 const mapStateToProps = (state) => {
   const { email, password, loading } = state.auth;
-  const isSecurePassword = (email && password.length >= MINIMUM_PASSWORD_LENGTH);
+  const isSecurePassword = (email && (password.length >= MINIMUM_PASSWORD_LENGTH));
 
   return { email, password, loading, isSecurePassword };
 };

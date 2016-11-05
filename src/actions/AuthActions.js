@@ -34,8 +34,6 @@ export const createUser = ({ email, password }) => {
 // ------------- HELPERS ---------------
 
 const createUserSuccess = (dispatch, user) => {
-  console.log(user);
-  console.log('in user success');
   firebase.database().ref(`users/${user.uid}`)
   .set({ email: user.email })
   .then(() => {
@@ -46,6 +44,5 @@ const createUserSuccess = (dispatch, user) => {
 
 const createUserFail = (dispatch, error) => {
   console.log(error);
-  console.log('in user fail');
   dispatch({ type: CREATE_USER_FAIL });
 };

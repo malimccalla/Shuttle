@@ -7,6 +7,7 @@ class ShowsList extends Component {
       <ScrollView contentContainerStyle={styles.containerStyle}>
         <StatusBar barStyle='light-content' />
         <View style={styles.noShowsStyle}>
+          {/* TODO take text out of image  */}
           <Image
             style={styles.imageStyle}
             source={require('../images/noShowsPlaceholder.png')}
