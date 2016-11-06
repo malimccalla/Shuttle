@@ -8,10 +8,13 @@ class SignInPage extends Component {
     const { containerStyle, textStyle } = styles;
 
     return (
-      <View style={containerStyle}>
+      <View style={{ ...containerStyle, paddingTop: 80 }}>
         <StatusBar hidden />
-        <Text style={textStyle}>Welcome back</Text>
-        <AuthForm ButtonSubmitText="Sign In" />
+        <Text style={textStyle}>Sign In</Text>
+        <AuthForm ButtonSubmitText="Submit" />
+        <View>
+          <Text> Already got an account? Sign In</Text>
+        </View>
       </View>
     );
   }

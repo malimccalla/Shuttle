@@ -35,7 +35,11 @@ class RouterComponent extends Component {
         <Router>
           <Scene key="auth">
             <Scene key="signUpPage" component={SignUpPage} hideNavBar />
-            <Scene key="SignInPage" component={SignInPage} hideNavBar initial />
+            <Scene
+              key="SignInPage" component={SignInPage}
+              initial
+              navigationBarStyle={styles.navBarStyle}
+            />
           </Scene>
 
           <Scene
