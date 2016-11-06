@@ -5,8 +5,8 @@ export const RouterComponent = () => {
   return (
     <Router>
       <Scene key="auth">
-        <Scene key="signup">
-          <Scene key="signupEmail" />
+        <Scene key="signUp">
+          <Scene key="signUpEmail" />
         </Scene>
 
         <Scene key="loging" />

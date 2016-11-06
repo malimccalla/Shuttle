@@ -1,7 +1,7 @@
 import {
   EMAIL_CHANGED,
   PASSWORD_CHANGED,
-  CREATE_USER_ATTEMPT,
+  AUTH_ATTEMPT,
   CREATE_USER_FAIL,
   CREATE_USER_SUCCESS
 } from '../actions/types';
@@ -11,7 +11,8 @@ const INITITAL_STATE = {
   password: '',
   loading: false,
   error: '',
-  user: null
+  user: null,
+  buttonDisabled: false
 };
 
 export default (state = INITITAL_STATE, action) => {
@@ -20,7 +21,7 @@ export default (state = INITITAL_STATE, action) => {
       return { ...state, email: action.payload };
     case PASSWORD_CHANGED:
       return { ...state, password: action.payload };
-    case CREATE_USER_ATTEMPT:
+    case AUTH_ATTEMPT:
       return { ...state, loading: true };
     case CREATE_USER_FAIL:
       return { ...state, loading: false, error: 'That email is already in use' };

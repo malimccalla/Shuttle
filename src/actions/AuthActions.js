@@ -3,7 +3,7 @@ import { Actions } from 'react-native-router-flux';
 import {
   EMAIL_CHANGED,
   PASSWORD_CHANGED,
-  CREATE_USER_ATTEMPT,
+  AUTH_ATTEMPT,
   CREATE_USER_SUCCESS,
   CREATE_USER_FAIL
 } from './types';
@@ -24,12 +24,18 @@ export const passwordChanged = (text) => {
 
 export const createUser = ({ email, password }) => {
   return (dispatch) => {
-    dispatch({ type: CREATE_USER_ATTEMPT });
+    dispatch({ type: AUTH_ATTEMPT });
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(user => createUserSuccess(dispatch, user))
       .catch((error) => createUserFail(dispatch, error));
   };
 };
+
+export const signInUser = ({ email, password }) => {
+  return (dispatch) => new Promise(function(resolve, reject) {
+
+  });
+}
 
 // ------------- HELPERS ---------------
 
