@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StatusBar, Image } from 'react-native';
 import { styles } from '../styles/SignUpPageStyles';
+import { Actions } from 'react-native-router-flux';
 import AuthForm from './AuthForm';
 import AuthFooter from './AuthFooter';
 
@@ -22,6 +23,7 @@ class SignUpPage extends Component {
         <AuthFooter
           text={'Already have an account?'}
           actionText={'Sign In'}
+          action={() => Actions.SignInPage()}
         />
       </View>
     );

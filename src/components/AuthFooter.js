@@ -6,7 +6,12 @@ class AuthFooter extends Component {
     return (
       <View style={styles.containerStyle}>
         <Text style={styles.textStyle}> {this.props.text}
-          <Text style={{ fontWeight: '600' }}> {this.props.actionText}</Text>
+          <Text
+            style={{ fontWeight: '600' }}
+            onPress={this.props.action}
+          >
+          {this.props.actionText}
+          </Text>
         </Text>
       </View>
     );

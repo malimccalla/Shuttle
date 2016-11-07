@@ -16,6 +16,7 @@ class SignInPage extends Component {
         <AuthFooter
           text={'Forgot your password?'}
           actionText={'Get Help'}
+          action={() => console.log('Go to reset password page')}
         />
       </View>
     );
