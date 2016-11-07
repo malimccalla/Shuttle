@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StatusBar } from 'react-native';
 import { styles } from '../styles/SignUpPageStyles';
 import AuthForm from './AuthForm';
+import AuthFooter from './AuthFooter';
 
 class SignInPage extends Component {
   render() {
@@ -12,12 +13,14 @@ class SignInPage extends Component {
         <StatusBar hidden />
         <Text style={textStyle}>Sign In</Text>
         <AuthForm ButtonSubmitText="Submit" />
-        <View>
-          <Text> Already got an account? Sign In</Text>
-        </View>
+        <AuthFooter
+          text={'Forgot your password?'}
+          actionText={'Get Help'}
+        />
       </View>
     );
   }
 }
+
 
 export default SignInPage;
