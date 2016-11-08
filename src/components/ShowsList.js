@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { Image, View, StatusBar, ScrollView, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import ShowsCard from './ShowsCard';
 
 class ShowsList extends Component {
   render() {
     return (
-      <ScrollView contentContainerStyle={styles.containerStyle}>
-        <StatusBar barStyle='light-content' showHideTransition='slide' />
-        <View style={styles.noShowsStyle}>
-          <Image
+      <View style={styles.containerStyle}>
+        <StatusBar barStyle='light-content' />
+        <ScrollView
+          style={styles.noShowsStyle}
+          showsVerticalScrollIndicator={false}
+        >
+          {/* <Image
             style={styles.imageStyle}
             source={require('../images/logo_placeholder.png')}
             resizeMode={'contain'}
@@ -18,9 +22,12 @@ class ShowsList extends Component {
             <Text style={{ color: '#02b875' }} onPress={() => Actions.addShow()}>
               {' Add a new one.'}
             </Text>
-          </Text>
-        </View>
-      </ScrollView>
+          </Text> */}
+          <ShowsCard />
+          <ShowsCard />
+          <ShowsCard />
+        </ScrollView>
+      </View>
     );
   }
 }
@@ -32,6 +39,7 @@ const styles = {
     justifyContent: 'center'
   },
   noShowsStyle: {
+    flex: 1,
     alignSelf: 'center',
     paddingBottom: 65
   },
