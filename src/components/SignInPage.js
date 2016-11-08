@@ -12,7 +12,7 @@ class SignInPage extends Component {
       <View style={{ ...containerStyle, paddingTop: 80 }}>
         <StatusBar hidden />
         <Text style={textStyle}>Sign In</Text>
-        <AuthForm ButtonSubmitText="Submit" />
+        <AuthForm ButtonSubmitText="Submit" onAuthSubmit={this.props.onAuthSubmit} />
         <AuthFooter
           text={'Forgot your password? '}
           actionText={'Get Help'}

@@ -45,6 +45,7 @@ class RouterComponent extends Component {
               key="SignInPage" component={SignInPage}
               navigationBarStyle={styles.navBarStyle}
               backButtonImage={require('./images/BackChevron.png')}
+              leftButtonIconStyle={{ marginLeft: 10, marginBottom: 10 }}
             />
           </Scene>
 

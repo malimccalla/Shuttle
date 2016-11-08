@@ -7,14 +7,19 @@ import { styles } from '../styles/SignUpPageStyles';
 import {
   emailChanged,
   passwordChanged,
-  createUser
+  createUser,
+  signInUser
 } from '../actions';
 
 class AuthForm extends Component {
 
   handleSubmitTap() {
-    const { email, password } = this.props;
-    this.props.createUser({ email, password });
+    const { email, password, ButtonSubmitText } = this.props;
+    if (ButtonSubmitText === 'Create account') {
+      this.props.createUser({ email, password });
+    } else {
+      this.props.signInUser({ email, password });
+    }
   }
 
   renderButton() {
@@ -62,5 +67,5 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-  emailChanged, passwordChanged, createUser
+  emailChanged, passwordChanged, createUser, signInUser
 })(AuthForm);
