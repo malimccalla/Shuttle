@@ -14,7 +14,7 @@ class SignInPage extends Component {
         <Text style={textStyle}>Sign In</Text>
         <AuthForm ButtonSubmitText="Submit" />
         <AuthFooter
-          text={'Forgot your password?'}
+          text={'Forgot your password? '}
           actionText={'Get Help'}
           action={() => console.log('Go to reset password page')}
         />

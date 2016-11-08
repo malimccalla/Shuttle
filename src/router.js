@@ -37,12 +37,14 @@ class RouterComponent extends Component {
             <Scene
               key="signUpPage"
               component={SignUpPage}
-              hideNavBar
+              // hideNavBar
               initial
+              navigationBarStyle={{ ...styles.navBarStyle, opacity: 0 }}
             />
             <Scene
               key="SignInPage" component={SignInPage}
               navigationBarStyle={styles.navBarStyle}
+              backButtonImage={require('./images/BackChevron.png')}
             />
           </Scene>
 

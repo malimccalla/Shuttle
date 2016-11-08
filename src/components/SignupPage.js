@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StatusBar, Image } from 'react-native';
-import { styles } from '../styles/SignUpPageStyles';
 import { Actions } from 'react-native-router-flux';
+import { styles } from '../styles/SignUpPageStyles';
 import AuthForm from './AuthForm';
 import AuthFooter from './AuthFooter';
 
@@ -21,7 +21,7 @@ class SignUpPage extends Component {
         <Text style={textStyle}>New here? Let's get you set up </Text>
         <AuthForm ButtonSubmitText="Create account" />
         <AuthFooter
-          text={'Already have an account?'}
+          text={'Already have an account? '}
           actionText={'Sign In'}
           action={() => Actions.SignInPage()}
         />
