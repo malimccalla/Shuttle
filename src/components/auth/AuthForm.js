@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import Button from 'react-native-button';
 import { connect } from 'react-redux';
-import { HoshiInput, Spinner } from './common';
-import { styles } from '../styles/SignUpPageStyles';
+import { HoshiInput, Spinner } from '../common';
+import { styles } from '../../styles/SignUpPageStyles';
 import {
   emailChanged,
   passwordChanged,
   createUser,
   signInUser
-} from '../actions';
+} from '../../actions';
 
 class AuthForm extends Component {
 

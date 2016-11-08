@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StatusBar } from 'react-native';
-import { styles } from '../styles/SignUpPageStyles';
+import { styles } from '../../styles/SignUpPageStyles';
 import AuthForm from './AuthForm';
 import AuthFooter from './AuthFooter';
 

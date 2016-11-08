@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Drawer from 'react-native-drawer';
 import { View } from 'react-native';
 import { Scene, Router, Actions } from 'react-native-router-flux';
-import SignUpPage from './components/SignUpPage';
-import SignInPage from './components/SignInPage';
+import SignUpPage from './components/auth/SignUpPage';
+import SignInPage from './components/auth/SignInPage';
 import ShowsList from './components/ShowsList';
 import AddShow from './components/AddShow';
 import { styles } from './styles/NavigationStyles';
@@ -38,7 +38,7 @@ class RouterComponent extends Component {
               key="signUpPage"
               component={SignUpPage}
               // hideNavBar
-              initial
+              // initial
               navigationBarStyle={{ ...styles.navBarStyle, opacity: 0 }}
             />
             <Scene
@@ -50,7 +50,7 @@ class RouterComponent extends Component {
           </Scene>
 
           <Scene
-            // initial
+            initial
             key="main"
             navigationBarStyle={styles.navBarStyle}
             titleStyle={styles.navBarTitleStyle}

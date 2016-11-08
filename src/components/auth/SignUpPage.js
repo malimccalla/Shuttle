@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StatusBar, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { styles } from '../styles/SignUpPageStyles';
+import { styles } from '../../styles/SignUpPageStyles';
 import AuthForm from './AuthForm';
 import AuthFooter from './AuthFooter';
 
@@ -15,7 +15,7 @@ class SignUpPage extends Component {
         <StatusBar hidden />
         <Image
           style={imageStyle}
-          source={require('../images/ShuttleWithLogo.png')}
+          source={require('../../images/ShuttleWithLogo.png')}
           resizeMode={'contain'}
         />
         <Text style={textStyle}>New here? Let's get you set up </Text>
