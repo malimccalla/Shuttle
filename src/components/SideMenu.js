@@ -14,7 +14,13 @@ class SideMenu extends Component {
         </View>
         <View style={styles.menuItems} />
         <View style={styles.breakSection} />
-        <View style={styles.settingsItems} />
+        <View style={styles.settingsItems}>
+          <Image
+            source={require('../images/logo_red_footer.png')}
+            resizeMode='contain'
+            style={styles.footerImage}
+          />
+        </View>
       </View>
     );
   }
@@ -40,13 +46,17 @@ const styles = {
   },
   settingsItems: {
     backgroundColor: '#ff7474',
-    flex: 4
+    flex: 4,
+    justifyContent: 'center'
   },
   logoStyle: {
     width: 100,
     height: 50,
     alignSelf: 'center',
     justifyContent: 'center',
+  },
+  footerImage: {
+    alignSelf: 'center',
   }
 };
 
