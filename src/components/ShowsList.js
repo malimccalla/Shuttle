@@ -5,7 +5,7 @@ class ShowsList extends Component {
   render() {
     return (
       <ScrollView contentContainerStyle={styles.containerStyle}>
-        <StatusBar barStyle='light-content' />
+        <StatusBar barStyle='light-content' showHideTransition='slide' />
         <View style={styles.noShowsStyle}>
           {/* TODO take text out of image  */}
           <Image

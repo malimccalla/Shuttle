@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Drawer from 'react-native-drawer';
-import { View } from 'react-native';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import SignUpPage from './components/auth/SignUpPage';
 import SignInPage from './components/auth/SignInPage';
+import SideMenu from './components/SideMenu';
 import ShowsList from './components/ShowsList';
 import AddShow from './components/AddShow';
 import { styles } from './styles/NavigationStyles';
@@ -21,7 +21,7 @@ class RouterComponent extends Component {
     return (
       <Drawer
         type="overlay"
-        content={<View />}
+        content={<SideMenu />}
         open={this.state.drawerOpen}
         tapToClose
         openDrawerOffset={0.2} // 20% gap on the right side of drawer
