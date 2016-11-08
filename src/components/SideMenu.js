@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, ScrollView } from 'react-native';
+import { View, Image } from 'react-native';
 
 class SideMenu extends Component {
   render() {
@@ -12,7 +12,7 @@ class SideMenu extends Component {
             resizeMode='contain'
           />
         </View>
-        <ScrollView style={styles.menuItems} />
+        <View style={styles.menuItems} />
         <View style={styles.breakSection} />
         <View style={styles.settingsItems} />
       </View>

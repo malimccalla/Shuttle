@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Image, View, StatusBar, ScrollView } from 'react-native';
+import { Image, View, StatusBar, ScrollView, Text } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 class ShowsList extends Component {
   render() {
@@ -7,12 +8,17 @@ class ShowsList extends Component {
       <ScrollView contentContainerStyle={styles.containerStyle}>
         <StatusBar barStyle='light-content' showHideTransition='slide' />
         <View style={styles.noShowsStyle}>
-          {/* TODO take text out of image  */}
           <Image
             style={styles.imageStyle}
-            source={require('../images/noShowsPlaceholder.png')}
+            source={require('../images/logo_placeholder.png')}
             resizeMode={'contain'}
           />
+          <Text style={styles.placeholderText}>
+            Looks like you don't have any shows to display here yet.
+            <Text style={{ color: '#02b875' }} onPress={() => Actions.addShow()}>
+              {' Add a new one.'}
+            </Text>
+          </Text>
         </View>
       </ScrollView>
     );
@@ -30,8 +36,17 @@ const styles = {
     paddingBottom: 65
   },
   imageStyle: {
-    height: 170,
+    height: 100,
     alignSelf: 'center'
+  },
+  placeholderText: {
+    color: '#A3A2A2',
+    fontSize: 18,
+    textAlign: 'center',
+    padding: 15
+  },
+  placeholerActionText: {
+    color: '#02b875'
   }
 };
 
