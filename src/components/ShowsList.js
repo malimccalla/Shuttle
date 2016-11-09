@@ -26,6 +26,9 @@ class ShowsList extends Component {
           <ShowsCard />
           <ShowsCard />
           <ShowsCard />
+          <ShowsCard />
+          <ShowsCard />
+          <ShowsCard />
         </ScrollView>
       </View>
     );
@@ -40,8 +43,7 @@ const styles = {
   },
   noShowsStyle: {
     flex: 1,
-    alignSelf: 'center',
-    paddingBottom: 65
+    alignSelf: 'center'
   },
   imageStyle: {
     height: 100,
