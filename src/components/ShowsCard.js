@@ -5,6 +5,7 @@ import Button from 'react-native-button';
 const ShowsCard = () => {
   return (
     <View style={styles.containerStyle}>
+      {/* TOP SECTION  */}
       <View style={styles.topSection}>
         <View style={styles.titleStyle}>
           <Text style={styles.cityText}>London, UK</Text>
@@ -15,7 +16,36 @@ const ShowsCard = () => {
           <Text style={styles.dayStyle}>WED</Text>
         </View>
       </View>
-      <View style={{ backgroundColor: '#b11', height: 140 }} />
+      {/* MIDDLE SECTION */}
+      <View style={styles.middleSection}>
+        {/* TOP HALF */}
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          <View style={{ flex: 4, justifyContent: 'center' }}>
+            <Text style={styles.middleSectionTitle}>Fee:</Text>
+            <Text style={styles.middleSectionValue}>
+              £1,200 <Text style={styles.pluses}>+++</Text></Text>
+          </View>
+          <View style={{ flex: 6, justifyContent: 'center' }}>
+          <Text style={styles.middleSectionTitle}>Set Time:</Text>
+          <Text style={styles.middleSectionValue}>11PM - 1AM</Text>
+          </View>
+        </View>
+        {/* BOTTOM HALF */}
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          <View style={{ flex: 4, justifyContent: 'center' }}>
+            <Text style={styles.middleSectionTitle}>Travel:</Text>
+            <Text style={styles.middleSectionValue}>LHR - ATH</Text>
+          </View>
+          <View style={{ flex: 6, justifyContent: 'center' }}>
+          <Text style={styles.middleSectionTitle}>Point of Contact:</Text>
+          <Text style={styles.middleSectionValue}>Maxalis: <Text
+          style={styles.phoneNumber}>
+          (030) 6973596114</Text>
+          </Text>
+          </View>
+        </View>
+      </View>
+      {/* BOTTOM BUTTON */}
       <Button style={styles.buttonStyle}>Full Details</Button>
     </View>
   );
@@ -23,7 +53,7 @@ const ShowsCard = () => {
 
 const styles = {
   containerStyle: {
-    height: 280,
+    height: 270,
     width: 365,
     borderWidth: 1,
     borderColor: '#EAEAEA',
@@ -75,13 +105,12 @@ const styles = {
     color: '#4A4A4A'
   },
   topSection: {
-    backgroundColor: '#fff',
     height: 60,
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginRight: 5,
     marginLeft: 5,
-    marginTop: 5
+    marginTop: 5,
   },
   dateStyle: {
     fontSize: 24,
@@ -93,6 +122,31 @@ const styles = {
     color: '#4A4A4A',
     fontSize: 14,
     fontFamily: 'Avenir Next'
+  },
+  middleSection: {
+    height: 140,
+    flexDirection: 'column',
+    marginLeft: 5,
+    marginRight: 5,
+  },
+  middleSectionTitle: {
+    fontSize: 14,
+    color: '#4A4A4A',
+    fontFamily: 'Avenir Next',
+    paddingBottom: 10
+  },
+  middleSectionValue: {
+    fontSize: 16,
+    color: '#4A4A4A',
+    fontFamily: 'Avenir Next',
+    fontWeight: '500'
+  },
+  phoneNumber: {
+    color: '#449BFF'
+  },
+  pluses: {
+    color: '#FFD11D',
+    fontWeight: '700'
   }
 };
 
