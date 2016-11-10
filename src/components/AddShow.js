@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import DatePicker from 'react-native-datepicker';
+import { Kaede } from 'react-native-textinput-effects';
+import {
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  Image,
+  TextInput
+} from 'react-native';
 
 class AddShow extends Component {
-  state = { date: '2016-05-15' }
+  state = {}
 
   render() {
     return (
@@ -12,39 +20,100 @@ class AddShow extends Component {
         <ScrollView style={styles.scrollContainer}>
           <View style={styles.formContainer}>
             <View style={styles.formSection}>
+
               <View style={styles.sectionTitle}>
-                <Text style={styles.sectionText}>Date:</Text>
+                <Text style={styles.sectionText}>Date</Text>
               </View>
-              <DatePicker
-                style={styles.datePicker}
-                date={this.state.date}
-                mode="date"
-                placeholder="select date"
-                format="DD-MM-YYYY"
-                minDate="01-01-2000"
-                maxDate="01-01-2100"
-                confirmBtnText="Confirm"
-                cancelBtnText="Cancel"
-                customStyles={{
-                  dateIcon: {
-                    position: 'absolute',
-                    right: 0,
-                    top: 4,
-                    marginLeft: 0
-                  },
-                  dateInput: {
-                    marginLeft: 36
-                  }
-                  // ... You can check the source to find the other keys.
-                }}
-                onDateChange={date => { this.setState({ date }); }}
-              />
+
+              <View style={styles.pickerCon}>
+                <DatePicker
+                  style={styles.datePicker}
+                  date={this.state.date}
+                  mode="date"
+                  placeholder="DD-MM-YYYY"
+                  format="DD/MM/YYYY"
+                  minDate="01-01-2000"
+                  maxDate="01-01-2100"
+                  confirmBtnText="Confirm"
+                  cancelBtnText="Cancel"
+                  showIcon={false}
+                  onDateChange={date => { this.setState({ date }); }}
+                />
+                <View style={{ flex: 4, alignItems: 'center' }}>
+                  <Image style={styles.calIcon} source={require('../images/calendar.png')} />
+                </View>
+              </View>
             </View>
-            <View style={styles.formSection} />
-            <View style={styles.formSection} />
-            <View style={styles.formSection} />
-            <View style={styles.formSection} />
-            <View style={styles.formSection} />
+
+            <Kaede
+              label={'City / Town'}
+              style={{ height: 70 }}
+              labelStyle={styles.kaedeLabel}
+              inputStyle={styles.kaedeInput}
+              returnKeyType='next'
+            />
+
+            <Kaede
+              label={'Country'}
+              style={{ height: 70 }}
+              labelStyle={styles.kaedeLabel}
+              inputStyle={styles.kaedeInput}
+              returnKeyType='done'
+            />
+
+            <Kaede
+              label={'Fee'}
+              style={{ height: 70 }}
+              labelStyle={styles.kaedeLabel}
+              inputStyle={styles.kaedeInput}
+              keyboardType='numbers-and-punctuation'
+            />
+
+            <View style={styles.formSection}>
+              <View style={styles.sectionTitle}>
+                <Text style={styles.sectionText}>Set Start</Text>
+              </View>
+
+              <View style={styles.pickerCon}>
+                <DatePicker
+                  style={styles.datePicker}
+                  date={this.state.date}
+                  mode="time"
+                  placeholder="HH:MM"
+                  format="HH:MM"
+                  confirmBtnText="Confirm"
+                  cancelBtnText="Cancel"
+                  showIcon={false}
+                  onDateChange={date => { this.setState({ date }); }}
+                />
+                <View style={{ flex: 4, alignItems: 'center' }}>
+                  <Image style={styles.calIcon} source={require('../images/calendar.png')} />
+                </View>
+              </View>
+            </View>
+
+            <View style={styles.formSection}>
+              <View style={styles.sectionTitle}>
+                <Text style={styles.sectionText}>Set End</Text>
+              </View>
+
+              <View style={styles.pickerCon}>
+                <DatePicker
+                  style={styles.datePicker}
+
+                  mode="time"
+                  placeholder="HH:MM"
+                  format="HH:MM"
+                  confirmBtnText="Confirm"
+                  cancelBtnText="Cancel"
+                  showIcon={false}
+                  onDateChange={date => { this.setState({ date }); }}
+                />
+                <View style={{ flex: 4, alignItems: 'center' }}>
+                  <Image style={styles.calIcon} source={require('../images/calendar.png')} />
+                </View>
+              </View>
+            </View>
           </View>
         </ScrollView>
 
@@ -79,28 +148,61 @@ const styles = {
   formContainer: {
     backgroundColor: '#f2f2f2',
     flex: 1,
-    margin: 20
+    marginTop: 10
   },
   formSection: {
     backgroundColor: '#fff',
     marginBottom: 10,
-    height: 70,
+    height: 60,
     flexDirection: 'row',
-    alignItems: 'center',
-    padding: 15
+    alignItems: 'center'
   },
   datePicker: {
-    width: 200,
-    flex: 1
+    width: 100,
+    height: 60,
+    flex: 7,
+    backgroundColor: '#fff',
+    justifyContent: 'center'
   },
   sectionTitle: {
-    flex: 1
+    flex: 2
   },
   sectionText: {
-    fontSize: 18,
-    color: '#4A4A4A',
     fontFamily: 'Avenir Next',
-    fontWeight: '500'
+    fontWeight: '400',
+    color: '#4A4A4A',
+    fontSize: 16,
+    paddingLeft: 15
+  },
+  pickerCon: {
+    flex: 6,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  calIcon: {
+    height: 30,
+    width: 30
+  },
+  formInput: {
+    border: 0,
+    borderBottom: 1,
+    height: 40,
+    borderColor: '#55555a',
+    width: 150
+  },
+  kaedeLabel: {
+    fontFamily: 'Avenir Next',
+    fontWeight: '400',
+    color: '#4A4A4A',
+    fontSize: 16,
+    backgroundColor: '#fff'
+  },
+  kaedeInput: {
+    fontSize: 18,
+    fontFamily: 'Avenir Next',
+    fontWeight: '600',
+    color: '#4A4A4A'
   }
 };
 
