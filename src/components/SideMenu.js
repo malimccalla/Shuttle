@@ -45,7 +45,7 @@ const styles = {
     flex: 1
   },
   settingsItems: {
-    backgroundColor: '#ff7474',
+    backgroundColor: '#FD5F5F',
     flex: 4,
     justifyContent: 'center'
   },

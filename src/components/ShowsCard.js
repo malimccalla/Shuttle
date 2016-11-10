@@ -38,9 +38,8 @@ const ShowsCard = () => {
           </View>
           <View style={{ flex: 6, justifyContent: 'center' }}>
           <Text style={styles.middleSectionTitle}>Point of Contact:</Text>
-          <Text style={styles.middleSectionValue}>Maxalis: <Text
-          style={styles.phoneNumber}>
-          (030) 6973596114</Text>
+          <Text style={styles.middleSectionValue}>Maxalis:
+            <Text style={styles.phoneNumber}> (030) 6973596114</Text>
           </Text>
           </View>
         </View>
@@ -56,7 +55,7 @@ const styles = {
     height: 270,
     width: 365,
     borderWidth: 1,
-    borderColor: '#EAEAEA',
+    borderColor: '#E1E1E1',
     borderRadius: 3,
     padding: 5,
     marginTop: 5,

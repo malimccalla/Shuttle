@@ -9,7 +9,7 @@ class ShowsList extends Component {
       <View style={styles.containerStyle}>
         <StatusBar barStyle='light-content' />
         <ScrollView
-          style={styles.noShowsStyle}
+          style={styles.scrollContentStyle}
           showsVerticalScrollIndicator={false}
         >
           {/* <Image
@@ -41,7 +41,7 @@ const styles = {
     backgroundColor: '#fefefe',
     justifyContent: 'center'
   },
-  noShowsStyle: {
+  scrollContentStyle: {
     flex: 1,
     alignSelf: 'center'
   },
