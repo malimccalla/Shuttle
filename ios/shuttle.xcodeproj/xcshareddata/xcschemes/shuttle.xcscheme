@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Shuttle.temp_caseinsensitive_rename.app"
+               BuildableName = "shuttle.temp_caseinsensitive_rename.temp_caseinsensitive_rename.app"
                BlueprintName = "shuttle"
                ReferencedContainer = "container:shuttle.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Shuttle.temp_caseinsensitive_rename.app"
+            BuildableName = "shuttle.temp_caseinsensitive_rename.temp_caseinsensitive_rename.app"
             BlueprintName = "shuttle"
             ReferencedContainer = "container:shuttle.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Shuttle.temp_caseinsensitive_rename.app"
+            BuildableName = "shuttle.temp_caseinsensitive_rename.temp_caseinsensitive_rename.app"
             BlueprintName = "shuttle"
             ReferencedContainer = "container:shuttle.xcodeproj">
          </BuildableReference>
@@ -99,7 +99,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Shuttle.temp_caseinsensitive_rename.app"
+            BuildableName = "shuttle.temp_caseinsensitive_rename.temp_caseinsensitive_rename.app"
             BlueprintName = "shuttle"
             ReferencedContainer = "container:shuttle.xcodeproj">
          </BuildableReference>
