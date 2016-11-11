@@ -15,6 +15,7 @@ class AuthForm extends Component {
 
   handleSubmitTap() {
     const { email, password, ButtonSubmitText } = this.props;
+    // TODO LOL... MAYBE SEPERATE INTO SEPERATE FORMS?
     if (ButtonSubmitText === 'Create account') {
       this.props.createUser({ email, password });
     } else {

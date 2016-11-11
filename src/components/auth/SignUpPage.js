@@ -9,7 +9,7 @@ class SignUpPage extends Component {
 
   render() {
     const { imageStyle, containerStyle, textStyle } = styles;
-
+    // TODO AUTH ERRORS
     return (
       <View style={containerStyle}>
         <StatusBar hidden />

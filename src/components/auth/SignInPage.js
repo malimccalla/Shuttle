@@ -7,7 +7,7 @@ import AuthFooter from './AuthFooter';
 class SignInPage extends Component {
   render() {
     const { containerStyle, textStyle } = styles;
-
+    // TODO AUTH ERRORS
     return (
       <View style={{ ...containerStyle, paddingTop: 80 }}>
         <StatusBar hidden />

@@ -12,6 +12,7 @@ class ShowsList extends Component {
           style={styles.scrollContentStyle}
           showsVerticalScrollIndicator={false}
         >
+          {/* TODO FIX NO SHOWS TEMPLATE */}
           {/* <Image
             style={styles.imageStyle}
             source={require('../images/logo_placeholder.png')}
