@@ -10,7 +10,7 @@ class Picker extends Component {
       <View style={styles.formSection}>
 
         <View style={styles.sectionTitle}>
-          <Text style={styles.sectionText}>Date</Text>
+          <Text style={styles.sectionText}>{this.props.label}</Text>
         </View>
 
         <View style={styles.pickerCon}>

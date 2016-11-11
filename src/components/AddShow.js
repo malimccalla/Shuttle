@@ -14,7 +14,7 @@ class AddShow extends Component {
       <View style={{ flex: 1, backgroundColor: '#fefefe' }}>
         <ScrollView style={styles.scrollContainer}>
           <View style={styles.formContainer}>
-            <Picker mode="date" placeholder="DD-MM-YYYY" format="DD/MM/YYYY" />
+            <Picker label="Date" mode="date" placeholder="DD-MM-YYYY" format="DD/MM/YYYY" />
             <Kaede
               label={'City / Town'}
               style={{ height: 70 }}
@@ -37,8 +37,8 @@ class AddShow extends Component {
               keyboardType='numbers-and-punctuation'
               returnKeyType='done'
             />
-            <Picker mode="time" placeholder="00:00" format="HH:MM" />
-            <Picker mode="time" placeholder="00:00" format="HH:MM" />
+            <Picker label="Set Start" mode="time" placeholder="00:00" format="HH:MM" />
+            <Picker label="Set End" mode="time" placeholder="00:00" format="HH:MM" />
           </View>
         </ScrollView>
 
