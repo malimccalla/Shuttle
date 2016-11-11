@@ -37,8 +37,8 @@ class AddShow extends Component {
               keyboardType='numbers-and-punctuation'
               returnKeyType='done'
             />
-            <Picker mode="date" placeholder="DD-MM-YYYY" format="DD/MM/YYYY" />
-            <Picker mode="date" placeholder="DD-MM-YYYY" format="DD/MM/YYYY" />
+            <Picker mode="time" placeholder="00:00" format="HH:MM" />
+            <Picker mode="time" placeholder="00:00" format="HH:MM" />
           </View>
         </ScrollView>
 

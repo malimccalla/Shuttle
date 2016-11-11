@@ -16,16 +16,16 @@ class Picker extends Component {
         <View style={styles.pickerCon}>
           <DatePicker
             style={styles.datePicker}
-            date={this.state.date}
+            date={this.state[this.props.mode]}
             mode={this.props.mode}
             placeholder={this.props.placeholder}
             format={this.props.format}
-            minDate="01-01-2000"
-            maxDate="01-01-2100"
+            // minDate="01-01-2000"
+            // maxDate="01-01-2100"
             confirmBtnText="Confirm"
             cancelBtnText="Cancel"
             showIcon={false}
-            onDateChange={date => { this.setState({ date }); }}
+            onDateChange={val => { this.setState({ [this.props.mode]: val }); }}
           />
           <View style={{ flex: 4, alignItems: 'center' }}>
             <Image style={styles.calIcon} source={require('../images/calendar.png')} />
