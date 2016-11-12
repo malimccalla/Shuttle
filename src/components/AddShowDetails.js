@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { Kaede } from 'react-native-textinput-effects';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity
-} from 'react-native';
+import { View, ScrollView } from 'react-native';
+import { connect } from 'react-redux';
 import Picker from './Picker';
+import NextButton from './NextButton';
+import { countryChanged } from '../actions/AddShowDetailsActions';
 
 class AddShowDetails extends Component {
   render() {
@@ -29,6 +27,8 @@ class AddShowDetails extends Component {
               labelStyle={styles.kaedeLabel}
               inputStyle={styles.kaedeInput}
               returnKeyType='done'
+              onChangeText={text => this.props.countryChanged(text)}
+              value={this.props.country}
             />
             <Kaede
               label={'Fee'}
@@ -42,31 +42,13 @@ class AddShowDetails extends Component {
             <Picker label="Set End" mode="time" placeholder="00:00" format="HH:mm" />
           </View>
         </ScrollView>
-
-        <TouchableOpacity>
-          <View style={styles.nextButton}>
-            <Text style={styles.buttonText}>Next</Text>
-          </View>
-        </TouchableOpacity>
+        <NextButton />
       </View>
     );
   }
 }
 
 const styles = {
-  nextButton: {
-    backgroundColor: '#FD5F5F',
-    height: 70,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  buttonText: {
-    color: '#fff',
-    fontFamily: 'Avenir Next',
-    fontSize: 20,
-    paddingTop: 5,
-    fontWeight: '500'
-  },
   scrollContainer: {
     backgroundColor: '#f2f2f2',
     flex: 1
@@ -98,4 +80,11 @@ const styles = {
   }
 };
 
-export default AddShowDetails;
+const mapStateToProps = ({ showDetails }) => {
+  const { country } = showDetails;
+  return {
+    country
+  };
+};
+
+export default connect(mapStateToProps, { countryChanged })(AddShowDetails);
