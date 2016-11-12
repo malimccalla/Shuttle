@@ -9,3 +9,8 @@ export const SIGN_IN_USER_FAIL = 'SIGN_IN_USER_FAIL';
 
 // Add Show Details
 export const COUNTRY_CHANGED = 'COUNTRY_CHANGED';
+export const DATE_CHANGED = 'DATE_CHANGED';
+export const CITY_CHANGED = 'CITY_CHANGED';
+export const SET_START_TIME_CHANGED = 'SET_START_TIME_CHANGED';
+export const SET_END_TIME_CHANGED = 'SET_END_TIME_CHANGED';
+export const FEE_CHANGED = 'FEE_CHANGED';

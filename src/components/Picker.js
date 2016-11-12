@@ -3,8 +3,6 @@ import DatePicker from 'react-native-datepicker';
 import { View, Text, Image } from 'react-native';
 
 class Picker extends Component {
-  state = {};
-
   render() {
     return (
       <View style={styles.formSection}>
@@ -16,14 +14,14 @@ class Picker extends Component {
         <View style={styles.pickerCon}>
           <DatePicker
             style={styles.datePicker}
-            date={this.state[this.props.mode]}
             mode={this.props.mode}
+            date={this.props.date}
             placeholder={this.props.placeholder}
             format={this.props.format}
             confirmBtnText="Confirm"
             cancelBtnText="Cancel"
             showIcon={false}
-            onDateChange={val => { this.setState({ [this.props.mode]: val }); }}
+            onDateChange={this.props.onDateChange}
           />
           <View style={{ flex: 4, alignItems: 'center' }}>
             <Image style={styles.calIcon} source={require('../images/calendar.png')} />

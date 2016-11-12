@@ -4,7 +4,14 @@ import { View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import Picker from './Picker';
 import NextButton from './NextButton';
-import { countryChanged } from '../actions/AddShowDetailsActions';
+import {
+  countryChanged,
+  dateChanged,
+  setStartTimeChanged,
+  setEndTimeChanged,
+  feeChanged,
+  cityChanged
+} from '../actions/AddShowDetailsActions';
 
 class AddShowDetails extends Component {
   render() {
@@ -12,13 +19,22 @@ class AddShowDetails extends Component {
       <View style={{ flex: 1, backgroundColor: '#fefefe' }}>
         <ScrollView style={styles.scrollContainer}>
           <View style={styles.formContainer}>
-            <Picker label="Date" mode="date" placeholder="DD-MM-YYYY" format="DD/MM/YYYY" />
+            <Picker
+              label="Date"
+              mode="date"
+              placeholder="DD-MM-YYYY"
+              format="DD/MM/YYYY"
+              onDateChange={(date) => this.props.dateChanged(date)}
+              date={this.props.date}
+            />
             <Kaede
               label={'City / Town'}
               style={{ height: 70 }}
               labelStyle={styles.kaedeLabel}
               inputStyle={styles.kaedeInput}
               returnKeyType='done'
+              value={this.props.city}
+              onChangeText={(text) => this.props.cityChanged(text)}
             />
             {/* TODO MAKE INPUTS INTO CONTROLLED REDUX COMPONENT */}
             <Kaede
@@ -27,8 +43,8 @@ class AddShowDetails extends Component {
               labelStyle={styles.kaedeLabel}
               inputStyle={styles.kaedeInput}
               returnKeyType='done'
-              onChangeText={text => this.props.countryChanged(text)}
               value={this.props.country}
+              onChangeText={text => this.props.countryChanged(text)}
             />
             <Kaede
               label={'Fee'}
@@ -37,9 +53,25 @@ class AddShowDetails extends Component {
               inputStyle={styles.kaedeInput}
               keyboardType='numbers-and-punctuation'
               returnKeyType='done'
+              value={this.props.fee}
+              onChangeText={(text) => this.props.feeChanged(text)}
             />
-            <Picker label="Set Start" mode="time" placeholder="00:00" format="HH:mm" />
-            <Picker label="Set End" mode="time" placeholder="00:00" format="HH:mm" />
+            <Picker
+              label="Set Start"
+              mode="time"
+              placeholder="00:00"
+              format="HH:mm"
+              onDateChange={(time) => this.props.setStartTimeChanged(time)}
+              date={this.props.setStartTime}
+            />
+            <Picker
+              label="Set End"
+              mode="time"
+              placeholder="00:00"
+              format="HH:mm"
+              onDateChange={(time) => this.props.setEndTimeChanged(time)}
+              date={this.props.setEndTime}
+            />
           </View>
         </ScrollView>
         <NextButton />
@@ -81,10 +113,17 @@ const styles = {
 };
 
 const mapStateToProps = ({ showDetails }) => {
-  const { country } = showDetails;
+  const { country, date, setStartTime, setEndTime, fee, city } = showDetails;
   return {
-    country
+    country, date, setStartTime, setEndTime, fee, city
   };
 };
 
-export default connect(mapStateToProps, { countryChanged })(AddShowDetails);
+export default connect(mapStateToProps, {
+  countryChanged,
+  dateChanged,
+  setEndTimeChanged,
+  setStartTimeChanged,
+  feeChanged,
+  cityChanged
+})(AddShowDetails);
