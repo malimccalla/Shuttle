@@ -20,7 +20,7 @@ class ShowsList extends Component {
           />
           <Text style={styles.placeholderText}>
             Looks like you don't have any shows to display here yet.
-            <Text style={{ color: '#02b875' }} onPress={() => Actions.addShow()}>
+            <Text style={{ color: '#02b875' }} onPress={() => Actions.AddShowDetails()}>
               {' Add a new one.'}
             </Text>
           </Text> */}

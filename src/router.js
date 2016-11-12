@@ -5,7 +5,7 @@ import SignUpPage from './components/auth/SignUpPage';
 import SignInPage from './components/auth/SignInPage';
 import SideMenu from './components/SideMenu';
 import ShowsList from './components/ShowsList';
-import AddShow from './components/AddShow';
+import AddShowDetails from './components/AddShowDetails';
 import { styles } from './styles/NavigationStyles';
 
 class RouterComponent extends Component {
@@ -60,7 +60,7 @@ class RouterComponent extends Component {
               component={ShowsList}
               title="Shows"
               rightButtonImage={require('./images/addShowButton.png')}
-              onRight={() => Actions.addShow()}
+              onRight={() => Actions.addShowDetails()}
               rightButtonIconStyle={styles.addShowButtonStyle}
               leftButtonImage={require('./images/menuButton.png')}
               onLeft={this.openDrawer.bind(this)}
@@ -68,8 +68,8 @@ class RouterComponent extends Component {
             />
             <Scene
               sceneStyle={{ paddingTop: 64 }}
-              key="addShow"
-              component={AddShow}
+              key="addShowDetails"
+              component={AddShowDetails}
               title="Add Show"
               backButtonImage={require('./images/BackChevron.png')}
             />

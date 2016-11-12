@@ -20,8 +20,6 @@ class Picker extends Component {
             mode={this.props.mode}
             placeholder={this.props.placeholder}
             format={this.props.format}
-            // minDate="01-01-2000"
-            // maxDate="01-01-2100"
             confirmBtnText="Confirm"
             cancelBtnText="Cancel"
             showIcon={false}

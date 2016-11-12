@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import Picker from './Picker';
 
-class AddShow extends Component {
+class AddShowDetails extends Component {
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: '#fefefe' }}>
@@ -22,6 +22,7 @@ class AddShow extends Component {
               inputStyle={styles.kaedeInput}
               returnKeyType='done'
             />
+            {/* TODO MAKE INPUTS INTO CONTROLLED REDUX COMPONENT */}
             <Kaede
               label={'Country'}
               style={{ height: 70 }}
@@ -37,8 +38,8 @@ class AddShow extends Component {
               keyboardType='numbers-and-punctuation'
               returnKeyType='done'
             />
-            <Picker label="Set Start" mode="time" placeholder="00:00" format="HH:MM" />
-            <Picker label="Set End" mode="time" placeholder="00:00" format="HH:MM" />
+            <Picker label="Set Start" mode="time" placeholder="00:00" format="HH:mm" />
+            <Picker label="Set End" mode="time" placeholder="00:00" format="HH:mm" />
           </View>
         </ScrollView>
 
@@ -97,4 +98,4 @@ const styles = {
   }
 };
 
-export default AddShow;
+export default AddShowDetails;
