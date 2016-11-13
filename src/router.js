@@ -49,7 +49,7 @@ class RouterComponent extends Component {
           </Scene>
 
           <Scene
-            initial
+            // initial
             key="main"
             navigationBarStyle={styles.navBarStyle}
             titleStyle={styles.navBarTitleStyle}
