@@ -11,8 +11,8 @@ const INITITAL_STATE = {
   date: '',
   country: '',
   city: '',
-  setStartTime: '00:00',
-  setEndTime: '00:00',
+  setStartTime: '',
+  setEndTime: '',
   fee: ''
 };
 

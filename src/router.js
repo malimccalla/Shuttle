@@ -35,7 +35,7 @@ class RouterComponent extends Component {
         <Router>
           <Scene key="auth">
             <Scene
-              initial
+              // initial
               key="signUpPage"
               component={SignUpPage}
               navigationBarStyle={{ ...styles.navBarStyle, opacity: 0 }}
@@ -49,7 +49,7 @@ class RouterComponent extends Component {
           </Scene>
 
           <Scene
-            // initial
+            initial
             key="main"
             navigationBarStyle={styles.navBarStyle}
             titleStyle={styles.navBarTitleStyle}
